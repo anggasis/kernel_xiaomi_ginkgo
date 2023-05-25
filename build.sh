@@ -4,7 +4,7 @@
 # Copyright (C) 2020-2021 Adithya R.
 
 SECONDS=0 # builtin bash timer
-ZIPNAME="QuicksilveRV2-ginkgo-$(date '+%Y%m%d-%H%M').zip"
+ZIPNAME="Shenhe-$(date '+%Y%m%d-%H%M').zip"
 TC_DIR="$HOME/tc/aosp-clang-15"
 GCC_64_DIR="$HOME/tc/aarch64-linux-android-4.9"
 GCC_32_DIR="$HOME/tc/arm-linux-androideabi-4.9"
@@ -18,8 +18,8 @@ fi
 
 export PATH="$TC_DIR/bin:$PATH"
 
-export KBUILD_BUILD_USER=Nakano
-export KBUILD_BUILD_HOST=Asep
+export KBUILD_BUILD_USER=Anggasis
+export KBUILD_BUILD_HOST=Shenhe
 
 if ! [ -d "${TC_DIR}" ]; then
 echo "Clang not found! Cloning to ${TC_DIR}..."
@@ -65,7 +65,7 @@ if [ -f "out/arch/arm64/boot/Image.gz-dtb" ] && [ -f "out/arch/arm64/boot/dtbo.i
 echo -e "\nKernel compiled succesfully! Zipping up...\n"
 if [ -d "$AK3_DIR" ]; then
 cp -r $AK3_DIR AnyKernel3
-elif ! git clone -q https://github.com/Pascoato/AnyKernel3; then
+elif ! git clone -q https://github.com/anggasis/AnyKernel3; then
 echo -e "\nAnyKernel3 repo not found locally and cloning failed! Aborting..."
 exit 1
 fi
