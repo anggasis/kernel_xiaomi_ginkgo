@@ -4,7 +4,7 @@
 # Copyright (C) 2020-2021 Adithya R.
 
 SECONDS=0 # builtin bash timer
-ZIPNAME="Shenhe-$(date '+%Y%m%d-%H%M').zip"
+ZIPNAME="Test-Ryuu-$(date '+%Y%m%d-%H%M').zip"
 TC_DIR="$HOME/tc/aosp-clang-15"
 GCC_64_DIR="$HOME/tc/aarch64-linux-android-4.9"
 GCC_32_DIR="$HOME/tc/arm-linux-androideabi-4.9"
@@ -19,11 +19,11 @@ fi
 export PATH="$TC_DIR/bin:$PATH"
 
 export KBUILD_BUILD_USER=Anggasis
-export KBUILD_BUILD_HOST=Shenhe
+export KBUILD_BUILD_HOST=ArchLabs
 
 if ! [ -d "${TC_DIR}" ]; then
 echo "Clang not found! Cloning to ${TC_DIR}..."
-if ! git clone --depth=1 https://gitlab.com/yaosp/prebuilts_clang_host_linux-x86_clang-r468909 ${TC_DIR}; then
+if ! git clone --depth=1 https://gitlab.com/moehacker/clang-r487747.git ${TC_DIR}; then
 echo "Cloning failed! Aborting..."
 exit 1
 fi
